@@ -24,9 +24,9 @@ class Storage(ABC):
     def get_free_space(self):
         pass
 
-    @abstractmethod
-    def get_items(self):
-        pass
+    #@abstractmethod  #  мертвый код, который следует удалить
+    #def get_items(self):
+        #pass
 
     @abstractmethod
     def get_unique_items_count(self):
