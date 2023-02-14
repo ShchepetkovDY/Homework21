@@ -1,7 +1,7 @@
 
 class Request:
     """
-    Класс обрабоки запроса (команды введенной пользователем)
+    Класс для обработки запроса, введенного пользователем
     """
     def __init__(self, string):
         decode_string = string.lower().split(" ")
@@ -13,34 +13,18 @@ class Request:
 
     @property
     def from_(self):
-        """
-        Геттер для __from
-        :return:
-        """
         return self.__from
 
     @property
     def to_(self):
-        """
-        Геттер для __to
-        :return:
-        """
         return self.__to
 
     @property
     def amount(self):
-        """
-        Геттер для __amount
-        :return:
-        """
         return self.__amount
 
     @property
     def product(self):
-        """
-        Геттер для __product
-        :return:
-        """
         return self.__product
 
     def __repr__(self):

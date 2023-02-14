@@ -12,30 +12,13 @@ class Store(Storage):
 
     @property
     def items(self):
-        """
-        Геттер для items
-        :return:
-        """
-        ###
-        """Дублирование кода. Метод полностью дублирует метод def get_items (self)"""
-        ###
         return self.__items
 
     @property
     def capacity(self):
-        """
-        Геттер для capacity
-        :return:
-        """
         return self.__capacity
 
     def get_free_space(self, *args, **kwargs):
-        """
-        Функция получения кол-ва сободного места на складе
-        :param args:
-        :param kwargs:
-        :return:
-        """
         count = 0
         for k, v in self.get_items().items():
             count += v
@@ -43,12 +26,7 @@ class Store(Storage):
 
     def add(self, new_title, new_capacity, *args, **kwargs):
         """
-        Функция добавления товара на склад
-        :param new_title:
-        :param new_capacity:
-        :param args:
-        :param kwargs:
-        :return:
+        Функция, которая добавляет товар на склад
         """
         if self.get_free_space(*args, **kwargs) >= new_capacity:
             if new_title in self.items:
@@ -61,10 +39,7 @@ class Store(Storage):
 
     def remove(self, rem_title, rem_capacity):
         """
-        Функция удаления товара со склада
-        :param rem_title:
-        :param rem_capacity:
-        :return:
+        Функция, которая удаляет товар со склада
         """
         if rem_title not in self.items or self.items[rem_title] < rem_capacity:
             return False
@@ -74,19 +49,13 @@ class Store(Storage):
 
     def get_items(self):
         """
-        Функция получения словаря товар: количество
-        :return:
+        Функция, которая получает словарь формата - товар: количество
         """
-
-        ###
-        """Дублирование кода. Метод полностью дублирует метод def items (self)"""
-        ###
         return self.items
 
     def get_unique_items_count(self):
         """
-        Функция получения кол-ва уникальных товаров
-        :return:
+        Функция, которая считает количество уникальных товаров
         """
         return len(self.items)
 
